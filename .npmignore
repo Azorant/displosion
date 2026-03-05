@@ -1,0 +1,10 @@
+.gitignore
+tsconfig.json
+src
+.husky
+node_modules
+.prettierrc
+eslint.config.mjs
+*.tgz
+test
+pnpm-workspace.yaml
