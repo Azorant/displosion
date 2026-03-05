@@ -7,10 +7,12 @@
   "type": "module",
   "scripts": {
     "build": "rimraf dist && tsc",
+    "prebuild": "pnpm lint",
     "prepare": "husky",
     "lint": "eslint src",
     "format": "prettier --write src",
-    "test": "pnpm build && tsx test/index.ts"
+    "test": "pnpm build && tsx test/index.ts",
+    "prepublish": "pnpm build"
   },
   "keywords": [
     "discord",
