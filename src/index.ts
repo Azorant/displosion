@@ -126,9 +126,14 @@ class CommandClient<Context> extends Client {
     if (path.basename(file).startsWith('_')) return null;
     let hasRequire = false;
 
-    if (require) {
-      hasRequire = true;
-      delete require.cache[require.resolve(file)];
+    try {
+      if (require) {
+        hasRequire = true;
+        delete require.cache[require.resolve(file)];
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      // TODO: Remove everything relating to require
     }
 
     try {
